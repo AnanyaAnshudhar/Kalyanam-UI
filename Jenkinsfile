@@ -3,7 +3,7 @@ pipeline {
 	stages {
       stage('SCM Checkout') {
          steps {
-            git 'https://github.com/KajalAgarwal26/Kalyanam-UI.git'
+            git 'https://github.com/AnanyaAnshudhar/Kalyanam-UI.git'
 		}
 	}
 	stage('Build') {
@@ -17,8 +17,8 @@ pipeline {
 	stage ('Deploy') {
 		steps {
 			sh '''
-             cp -r $WORKSPACE/dist/matrimony /opt/apache-tomcat-9.0.30/webapps
-             curl -u admin:admin http://13.127.140.193:8888/manager/reload?path=/build 
+             cp -r $WORKSPACE/dist/matrimony /opt/apache-tomcat-9.0.31/webapps
+             curl -u admin:admin http://3.133.131.141:8888/manager/reload?path=/build 
              '''
 		}
 	}
